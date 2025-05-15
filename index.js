@@ -13,7 +13,7 @@ const app = express();
 // Store last calculation
 let lastCalculation = { num1: null, num2: null, operation: null, result: null };
 
-// Homepage route with welcome message and showing last calculation
+// Homepage route with welcome message showing last calculation
 app.get('/', (_, res) => {
     const { num1, num2, operation, result } = lastCalculation;
     
