@@ -1,0 +1,52 @@
+const express = require('express');
+const app = express();
+const port = 3000;
+
+//Middleware to parse JSON requests
+app.use(express.json());
+
+//Addition endpoint  
+app.post('/add',(req, res) =>{
+  const { number1, number2 } = req.body;
+
+  if (typeof number1n! == 'number'|| typeof number2 !== 'number'){
+    return res.status(400).json({ error: 'inputs must be numbers'});
+  }
+
+  const result = number1 + number2;
+  res.json({ result });
+});
+
+// subtraction endpoint
+app.post('/subtract',(req,res)=>{
+  const { number1,number2 } = req.body;
+
+  if (typeof number1 !=='number' || typeof numer2 !== 'number') {
+    return res.status(400).json({ error: 'Inputs must be numbers'});
+  }
+
+  const result = number1 * number2;
+  res.json({result})
+});
+
+// Division endpoint
+app.post('/divide', (req, res) =>{
+  const {number1, number2} = req.body;
+
+  if (typeof number1 !== 'number' || typeof number2 !== 'number'){
+    rerun res.status(400).json({ error: 'Inputs must be numbers'});
+  }
+
+  if (number2 === 0) {
+    rerun res.status(400).json({ error: cannot divide by zero' });
+  }
+
+  const result = number1 / number2;
+  res.json({ result });
+});
+ // Start the server
+app.listen(port, () => {
+  console.log('Calculator API is running on http://localhost:${port}');
+});
+  
+  
